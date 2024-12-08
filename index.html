@@ -1,12 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Homepage</title>
+	<meta charset="UTF-8">
+	<title>Fenghao Li</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<style>
+		body {
+			font-family: 'Roboto', sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f2f2f2;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 40px;
+			background-color: #fff;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			justify-content: space-between;
+		}
+
+		.container section {
+			flex-basis: calc(50% - 20px);
+			margin-bottom: 20px;
+		}
+
+		h1,
+		h2,
+		h3 {
+			margin-top: 0;
+		}
+
+		h1 {
+			font-size: 36px;
+			font-weight: bold;
+			color: #333;
+		}
+
+		h2 {
+			font-size: 24px;
+			font-weight: bold;
+			color: #333;
+		}
+
+		h3 {
+			font-size: 18px;
+			font-weight: bold;
+			color: #333;
+			padding: 20px;
+		}
+
+		p {
+			font-size: 16px;
+			line-height: 1.5;
+			color: #666;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		li {
+			margin-bottom: 10px;
+		}
+
+		a {
+			color: #0077cc;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		img {
+			/* flex: 1 1 50%; */
+			width: 30%;
+			height: auto;
+		}
+
+		.publication-title {
+			font-weight: bold;
+			font-size: 18px;
+			margin-bottom: 5px;
+		}
+
+		.publication-author {
+			font-size: 16px;
+			margin-bottom: 5px;
+		}
+
+		.publication-info {
+			font-size: 14px;
+			color: #666;
+		}
+
+		.publication-link a {
+			color: #0066cc;
+			text-decoration: none;
+		}
+
+		.publication-link a:hover {
+			text-decoration: underline;
+		}
+	</style>
 </head>
+
 <body>
-    <h1>Welcome to My Personal Homepage</h1>
-    <p>Hi, I'm [Your Name]. This is my personal homepage hosted on GitHub Pages!</p>
+	<div class="container">
+		<header>
+			<h1>Fenghao Li</h1>
+		</header>
+		<main>
+			<section style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+				<div style="padding-right: 20px;">
+					<p>Hello! I'm Fenghao Li. a third-year undergraduate student.I'm Fenghao Li. a third-year undergraduate student.
+					</p>
+			
+					<p> You can view my resume <a href="resume.pdf">here</a>.
+					</p>
+				</div>
+				<img src="./photo.jpg" alt="Fenghao Li" style="max-width: 170px; height: auto;">
+			</section>
+			<section>
+				<h2>Selected Awards</h2>
+				<ul>
+					<!-- <li>1st place @ 45th Annual ICPC World Finals </li> -->
+				</ul>
+			</section>
+			<section>
+				<h2>Publications</h2>
+				<ul>
+					<li>
+						<!-- <div class="publication-title"><a href="https://arxiv.org/abs/2406.11838.pdf">Autoregressive
+								Image Generation without Vector Quantization</a></div>
+						<div class="publication-info">Tianhong Li, Yonglong Tian, He Li, Mingyang Deng, Kaiming He |
+							NeurIPS 2024 (Spotlight). </div> -->
+					</li>
+				</ul>
+			</section>
+			<section id="projects">
+				<h2>Projects</h2>
+				<p>I have lots of random thoughts, so I implemented many projects.</p>
+				<ul>
+					<!-- <li>
+						<div class="publication-title"><a href="http://goodchess.top">Good chess</a></div>
+						<div class="publication-info">A great chess game, as the name suggests. </div>
+					</li> -->
+				</ul>
+			</section>
+
+		</main>
+	</div>
 </body>
+
 </html>
