@@ -9,5 +9,5 @@ github_username:  s1amese2003
 theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-new-post
+  
 
