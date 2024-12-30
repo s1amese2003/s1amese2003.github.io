@@ -1,13 +1,10 @@
 ---
 layout: post
-title: "assignment-2-marriage_pact"
+title: "assignment 2: Marriage Pact"
 date: 2024-12-30 12:02:20 +0800
 categories: [CS106L]
 tags: [cpp]
 ---
-
-# assignment-2-marriage_pact
-
 这个assignment和上一次内容差别不大，主要需要掌握**ifstream**、**getline**和**istringstream**的使用，**ifstream**、**getline**已经在上一篇讲过了，**istringstream**也主要是对字符串的读取，例如下面我们读入一个字符串 **"1 abc def"**
 ```c++
 #include <sstream>
