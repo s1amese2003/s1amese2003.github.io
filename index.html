@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">我的主页</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">首页</a></li>
+                <li><a href="#education" class="nav-link">教育经历</a></li>
+                <li><a href="#skills" class="nav-link">专业技能</a></li>
+                <li><a href="#projects" class="nav-link">项目经历</a></li>
+                <li><a href="#experience" class="nav-link">实习经历</a></li>
+                <li><a href="blog.html" class="nav-link">博客</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 个人信息 -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="https://via.placeholder.com/200" alt="头像" class="avatar">
+                <h1>你的名字</h1>
+                <p class="subtitle">软件工程师 | 全栈开发者</p>
+                <div class="social-links">
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">LinkedIn</a>
+                    <a href="#" target="_blank">邮箱</a>
+                </div>
+                <p class="bio">
+                    这里可以写一段简短的自我介绍，描述你的职业方向、技术兴趣和个人特点。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 教育经历 -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">教育经历</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>XX大学</h3>
+                        <p class="timeline-date">2019.09 - 2023.06</p>
+                        <p class="timeline-major">计算机科学与技术 | 本科</p>
+                        <ul class="timeline-details">
+                            <li>GPA: 3.8/4.0</li>
+                            <li>主修课程：数据结构、算法、操作系统、计算机网络</li>
+                            <li>获得奖项：优秀学生奖学金</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>XX中学</h3>
+                        <p class="timeline-date">2016.09 - 2019.06</p>
+                        <p class="timeline-major">高中</p>
+                        <ul class="timeline-details">
+                            <li>理科重点班</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 专业技能 -->
+    <section id="skills" class="section bg-gray">
+        <div class="container">
+            <h2 class="section-title">专业技能</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>前端开发</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Vue</span>
+                        <span class="skill-tag">TypeScript</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>后端开发</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>工具与其他</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Figma</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目经历 -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">项目经历</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>项目名称 1</h3>
+                        <span class="project-date">2023.03 - 2023.06</span>
+                    </div>
+                    <p class="project-desc">
+                        项目简介：这里描述项目的背景、目标和你在其中的角色。
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>实现了XX功能，提升了XX性能</li>
+                        <li>使用XX技术解决了XX问题</li>
+                        <li>项目获得了XX成果</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="#" target="_blank">GitHub</a>
+                        <a href="#" target="_blank">演示</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>项目名称 2</h3>
+                        <span class="project-date">2022.09 - 2022.12</span>
+                    </div>
+                    <p class="project-desc">
+                        项目简介：这里描述项目的背景、目标和你在其中的角色。
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Vue</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>开发了XX模块，支持XX用户</li>
+                        <li>优化了XX流程，减少了XX时间</li>
+                        <li>协作完成XX任务</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="#" target="_blank">GitHub</a>
+                        <a href="#" target="_blank">演示</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>项目名称 3</h3>
+                        <span class="project-date">2022.03 - 2022.06</span>
+                    </div>
+                    <p class="project-desc">
+                        项目简介：这里描述项目的背景、目标和你在其中的角色。
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>设计并实现了XX架构</li>
+                        <li>处理了XX业务逻辑</li>
+                        <li>提升了系统XX指标</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="#" target="_blank">GitHub</a>
+                        <a href="#" target="_blank">演示</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 实习经历 -->
+    <section id="experience" class="section bg-gray">
+        <div class="container">
+            <h2 class="section-title">实习经历</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>XX科技有限公司</h3>
+                        <p class="timeline-date">2023.06 - 2023.09</p>
+                        <p class="timeline-major">前端开发实习生</p>
+                        <ul class="timeline-details">
+                            <li>参与公司核心产品的前端开发，使用React和TypeScript</li>
+                            <li>优化页面加载速度，提升用户体验</li>
+                            <li>与后端团队协作，完成API对接</li>
+                            <li>参与代码审查和技术分享会</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>YY互联网公司</h3>
+                        <p class="timeline-date">2022.06 - 2022.09</p>
+                        <p class="timeline-major">全栈开发实习生</p>
+                        <ul class="timeline-details">
+                            <li>负责后台管理系统的开发与维护</li>
+                            <li>使用Node.js和Express构建RESTful API</li>
+                            <li>实现数据可视化图表功能</li>
+                            <li>编写单元测试，保证代码质量</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 你的名字. All rights reserved.</p>
+            <p>联系方式: your.email@example.com | +86 123-4567-8900</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
