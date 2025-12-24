@@ -3,246 +3,446 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人主页</title>
-    <link rel="stylesheet" href="style.css">
+    <title>李逢浩的简历 - Resume of Li Fenghao</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            position: relative;
+        }
+
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: #667eea;
+        }
+
+        .name {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.95em;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .subsection {
+            margin-bottom: 20px;
+        }
+
+        .subsection-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .subsection-content {
+            color: #555;
+            padding-left: 15px;
+        }
+
+        .subsection-content li {
+            margin-bottom: 8px;
+            list-style-position: inside;
+        }
+
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .degree {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .date {
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        .award-item, .skill-item {
+            padding: 8px 0;
+            color: #555;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            margin-top: 10px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .lang-switch {
+                top: 15px;
+                right: 15px;
+            }
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">我的主页</div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">首页</a></li>
-                <li><a href="#education" class="nav-link">教育经历</a></li>
-                <li><a href="#skills" class="nav-link">专业技能</a></li>
-                <li><a href="#projects" class="nav-link">项目经历</a></li>
-                <li><a href="#experience" class="nav-link">实习经历</a></li>
-                <li><a href="blog.html" class="nav-link">博客</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+    <div class="container">
+        <div class="header">
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="switchLang('zh')">中文</button>
+                <button class="lang-btn" onclick="switchLang('en')">English</button>
             </div>
-        </div>
-    </nav>
-
-    <!-- 个人信息 -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <img src="https://via.placeholder.com/200" alt="头像" class="avatar">
-                <h1>你的名字</h1>
-                <p class="subtitle">软件工程师 | 全栈开发者</p>
-                <div class="social-links">
-                    <a href="#" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">LinkedIn</a>
-                    <a href="#" target="_blank">邮箱</a>
+            
+            <!-- Chinese Header -->
+            <div id="header-zh" class="lang-content active">
+                <div class="name">李逢浩</div>
+                <div class="contact-info">
+                    <div class="contact-item">📧 trisolaris03@gmail.com</div>
+                    <div class="contact-item">📱 +86 153-4335-6293</div>
                 </div>
-                <p class="bio">
-                    这里可以写一段简短的自我介绍，描述你的职业方向、技术兴趣和个人特点。
-                </p>
             </div>
-        </div>
-    </section>
 
-    <!-- 教育经历 -->
-    <section id="education" class="section">
-        <div class="container">
-            <h2 class="section-title">教育经历</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>XX大学</h3>
-                        <p class="timeline-date">2019.09 - 2023.06</p>
-                        <p class="timeline-major">计算机科学与技术 | 本科</p>
-                        <ul class="timeline-details">
-                            <li>GPA: 3.8/4.0</li>
-                            <li>主修课程：数据结构、算法、操作系统、计算机网络</li>
-                            <li>获得奖项：优秀学生奖学金</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>XX中学</h3>
-                        <p class="timeline-date">2016.09 - 2019.06</p>
-                        <p class="timeline-major">高中</p>
-                        <ul class="timeline-details">
-                            <li>理科重点班</li>
-                        </ul>
-                    </div>
+            <!-- English Header -->
+            <div id="header-en" class="lang-content">
+                <div class="name">Li Fenghao</div>
+                <div class="contact-info">
+                    <div class="contact-item">📧 trisolaris03@gmail.com</div>
+                    <div class="contact-item">📱 +86 153-4335-6293</div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- 专业技能 -->
-    <section id="skills" class="section bg-gray">
-        <div class="container">
-            <h2 class="section-title">专业技能</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>前端开发</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Vue</span>
-                        <span class="skill-tag">TypeScript</span>
+        <div class="content">
+            <!-- Chinese Content -->
+            <div id="content-zh" class="lang-content active">
+                <!-- Download Button -->
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <a href="resume/resume.pdf" class="download-btn" download>📄 下载 PDF 简历</a>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <h2 class="section-title">教育背景</h2>
+                    <div class="education-item">
+                        <div>
+                            <span class="degree">中南林业科技大学</span> - 信息与计算科学，<em>本科</em>
+                        </div>
+                        <div class="date">2022.9 - 2026.6</div>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>后端开发</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">MongoDB</span>
+
+                <!-- Competition Experience -->
+                <div class="section">
+                    <h2 class="section-title">竞赛经历</h2>
+                    <div class="award-item">🏆 ICPC国际大学生程序设计竞赛亚洲区域赛铜奖</div>
+                    <div class="award-item">🥈 HNCPC湖南省大学生程序设计竞赛银奖</div>
+                </div>
+
+                <!-- Professional Skills -->
+                <div class="section">
+                    <h2 class="section-title">专业技能</h2>
+                    <div class="skill-item">💻 熟练使用 C++，熟悉 STL 标准库、并发编程、内存管理及性能优化。</div>
+                    <div class="skill-item">🔴 熟悉 Redis 底层原理。如常用数据类型的底层实现，哨兵模型的原理，持久化机制和过期删除，内存淘汰策略等。</div>
+                    <div class="skill-item">🗄️ 熟悉 MySQL 基础知识。如索引，事务隔离级别，锁机制，日志等。</div>
+                    <div class="skill-item">🌐 熟悉各种网络协议。如 TCP, IP, DHCP, OSPF, VLAN, STP 协议等。</div>
+                    <div class="skill-item">🔍 会使用 Wireshark 进行抓包，分析常见的网络故障。</div>
+                </div>
+
+                <!-- Project Experience -->
+                <div class="section">
+                    <h2 class="section-title">项目经历</h2>
+                    
+                    <div class="subsection">
+                        <div class="subsection-title">C++ 微信即时通讯系统（WeChat-like IM System）</div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">即时通讯与协议设计</div>
+                        <div class="subsection-content">
+                            <ul>
+                                <li>设计基于 TCP/WebSocket 的双向长连接协议，使用 Protobuf 定义消息结构，支持文本消息、文件分片、好友请求与朋友圈更新。</li>
+                                <li>实现消息路由与离线消息队列，采用消息序号 + ACK 重传机制，提升弱网场景下的可靠性与一致性。</li>
+                                <li>技术栈：C++、Boost.Asio、WebSocket、Protobuf、SQLite。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">文件传输与断点续传（File Transfer）</div>
+                        <div class="subsection-content">
+                            <ul>
+                                <li>设计分片上传协议，支持 offset + chunk + MD5 校验，实现大文件断点续传与并发分片写入。</li>
+                                <li>服务端支持文件落盘、任务恢复与流式下载，支持并发上传与完整性校验。</li>
+                                <li>技术栈：C++、libcurl / cpp-httplib、并发 IO、MD5 校验。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">好友系统与状态管理（Friend Service）</div>
+                        <div class="subsection-content">
+                            <ul>
+                                <li>实现好友申请/同意/删除/黑名单功能，设计好友关系状态机与授权逻辑，客户端以 SQLite 缓存关系快照。</li>
+                                <li>支持增量同步与本地查询，降低网络开销并提升客户端响应速度。</li>
+                                <li>技术栈：C++、SQLite、ACL 策略。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">朋友圈（Moments）与多媒体</div>
+                        <div class="subsection-content">
+                            <ul>
+                                <li>支持发布文本与多图片，服务端对象存储管理图片元数据，客户端支持缩略图生成与缓存策略。</li>
+                                <li>设计拉取/增量更新接口与带宽控制，优化移动网络下的加载与展示体验。</li>
+                                <li>技术栈：C++、HTTP 文件服务、OpenCV / Qt 图片处理、缓存策略。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">技术亮点与工程化</div>
+                        <div class="subsection-content">
+                            <ul>
+                                <li>端到端实现即时通信栈：协议设计、长连接、可靠传输、文件分片、媒体信令与客户端 UI。</li>
+                                <li>通过多线程与异步 IO（std::thread、mutex、Boost.Asio）提升并发吞吐；项目容器化（Docker），提供可复现 Demo。</li>
+                                <li>简历描述示例：C++/Qt + Boost.Asio 实现 WeChat-like IM，包含文本、文件、好友、朋友圈与音视频信令。</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>工具与其他</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">Figma</span>
+            </div>
+
+            <!-- English Content -->
+            <div id="content-en" class="lang-content">
+                <!-- Download Button -->
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <a href="resume/resume.pdf" class="download-btn" download>📄 Download PDF Resume</a>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <h2 class="section-title">Education</h2>
+                    <div class="education-item">
+                        <div>
+                            <span class="degree">Central South University of Forestry and Technology</span> - Information and Computing Science, <em>Bachelor</em>
+                        </div>
+                        <div class="date">Sep 2022 - Jun 2026</div>
+                    </div>
+                </div>
+
+                <!-- Competition Experience -->
+                <div class="section">
+                    <h2 class="section-title">Competition Experience</h2>
+                    <div class="award-item">🏆 ICPC International Collegiate Programming Contest Asia Regional Bronze Medal</div>
+                    <div class="award-item">🥈 HNCPC Hunan Collegiate Programming Contest Silver Medal</div>
+                </div>
+
+                <!-- Professional Skills -->
+                <div class="section">
+                    <h2 class="section-title">Professional Skills</h2>
+                    <div class="skill-item">💻 Proficient in C++, familiar with STL, concurrent programming, memory management, and performance optimization.</div>
+                    <div class="skill-item">🔴 Familiar with Redis internals, including data structure implementations, sentinel model, persistence mechanisms, expiration policies, and memory eviction strategies.</div>
+                    <div class="skill-item">🗄️ Familiar with MySQL fundamentals, including indexing, transaction isolation levels, locking mechanisms, and logging.</div>
+                    <div class="skill-item">🌐 Familiar with various network protocols such as TCP, IP, DHCP, OSPF, VLAN, and STP.</div>
+                    <div class="skill-item">🔍 Capable of using Wireshark for packet capture and analyzing common network issues.</div>
+                </div>
+
+                <!-- Project Experience -->
+                <div class="section">
+                    <h2 class="section-title">Project Experience</h2>
+                    
+                    <div class="subsection">
+                        <div class="subsection-title">C++ WeChat-like Instant Messaging System</div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Instant Messaging & Protocol Design</div>
+                        <div class="subsection-content">
+                            <ul>
+                                <li>Designed bidirectional long-connection protocol based on TCP/WebSocket, using Protobuf for message structure definition, supporting text messages, file chunking, friend requests, and moments updates.</li>
+                                <li>Implemented message routing and offline message queue with message sequence number + ACK retransmission mechanism to improve reliability and consistency in weak network scenarios.</li>
+                                <li>Tech Stack: C++, Boost.Asio, WebSocket, Protobuf, SQLite.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">File Transfer & Resumable Upload</div>
+                        <div class="subsection-content">
+                            <ul>
+                                <li>Designed chunked upload protocol with offset + chunk + MD5 verification, implementing large file resumable upload and concurrent chunk writing.</li>
+                                <li>Server-side supports file persistence, task recovery, and streaming download with concurrent upload and integrity verification.</li>
+                                <li>Tech Stack: C++, libcurl/cpp-httplib, concurrent IO, MD5 verification.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Friend System & State Management</div>
+                        <div class="subsection-content">
+                            <ul>
+                                <li>Implemented friend request/accept/delete/block features, designed friend relationship state machine and authorization logic, with SQLite caching relationship snapshots on client side.</li>
+                                <li>Supports incremental synchronization and local queries, reducing network overhead and improving client response speed.</li>
+                                <li>Tech Stack: C++, SQLite, ACL policy.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Moments & Multimedia</div>
+                        <div class="subsection-content">
+                            <ul>
+                                <li>Supports posting text and multiple images, server-side object storage manages image metadata, client-side supports thumbnail generation and caching strategies.</li>
+                                <li>Designed pull/incremental update interface with bandwidth control, optimizing loading and display experience on mobile networks.</li>
+                                <li>Tech Stack: C++, HTTP file service, OpenCV/Qt image processing, caching strategy.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Technical Highlights & Engineering</div>
+                        <div class="subsection-content">
+                            <ul>
+                                <li>End-to-end implementation of instant messaging stack: protocol design, long connection, reliable transmission, file chunking, media signaling, and client UI.</li>
+                                <li>Improved concurrent throughput through multithreading and asynchronous IO (std::thread, mutex, Boost.Asio); containerized project (Docker) with reproducible demo.</li>
+                                <li>Resume description: Implemented WeChat-like IM using C++/Qt + Boost.Asio, including text, file, friend, moments, and audio/video signaling features.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- 项目经历 -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">项目经历</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>项目名称 1</h3>
-                        <span class="project-date">2023.03 - 2023.06</span>
-                    </div>
-                    <p class="project-desc">
-                        项目简介：这里描述项目的背景、目标和你在其中的角色。
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
-                    </div>
-                    <ul class="project-highlights">
-                        <li>实现了XX功能，提升了XX性能</li>
-                        <li>使用XX技术解决了XX问题</li>
-                        <li>项目获得了XX成果</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="#" target="_blank">GitHub</a>
-                        <a href="#" target="_blank">演示</a>
-                    </div>
-                </div>
+    <script>
+        function switchLang(lang) {
+            // Hide all language content
+            document.querySelectorAll('.lang-content').forEach(el => {
+                el.classList.remove('active');
+            });
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>项目名称 2</h3>
-                        <span class="project-date">2022.09 - 2022.12</span>
-                    </div>
-                    <p class="project-desc">
-                        项目简介：这里描述项目的背景、目标和你在其中的角色。
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Vue</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">MySQL</span>
-                    </div>
-                    <ul class="project-highlights">
-                        <li>开发了XX模块，支持XX用户</li>
-                        <li>优化了XX流程，减少了XX时间</li>
-                        <li>协作完成XX任务</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="#" target="_blank">GitHub</a>
-                        <a href="#" target="_blank">演示</a>
-                    </div>
-                </div>
+            // Show selected language content
+            document.getElementById('header-' + lang).classList.add('active');
+            document.getElementById('content-' + lang).classList.add('active');
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>项目名称 3</h3>
-                        <span class="project-date">2022.03 - 2022.06</span>
-                    </div>
-                    <p class="project-desc">
-                        项目简介：这里描述项目的背景、目标和你在其中的角色。
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Express</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                    </div>
-                    <ul class="project-highlights">
-                        <li>设计并实现了XX架构</li>
-                        <li>处理了XX业务逻辑</li>
-                        <li>提升了系统XX指标</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="#" target="_blank">GitHub</a>
-                        <a href="#" target="_blank">演示</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
 
-    <!-- 实习经历 -->
-    <section id="experience" class="section bg-gray">
-        <div class="container">
-            <h2 class="section-title">实习经历</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>XX科技有限公司</h3>
-                        <p class="timeline-date">2023.06 - 2023.09</p>
-                        <p class="timeline-major">前端开发实习生</p>
-                        <ul class="timeline-details">
-                            <li>参与公司核心产品的前端开发，使用React和TypeScript</li>
-                            <li>优化页面加载速度，提升用户体验</li>
-                            <li>与后端团队协作，完成API对接</li>
-                            <li>参与代码审查和技术分享会</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>YY互联网公司</h3>
-                        <p class="timeline-date">2022.06 - 2022.09</p>
-                        <p class="timeline-major">全栈开发实习生</p>
-                        <ul class="timeline-details">
-                            <li>负责后台管理系统的开发与维护</li>
-                            <li>使用Node.js和Express构建RESTful API</li>
-                            <li>实现数据可视化图表功能</li>
-                            <li>编写单元测试，保证代码质量</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 页脚 -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 你的名字. All rights reserved.</p>
-            <p>联系方式: your.email@example.com | +86 123-4567-8900</p>
-        </div>
-    </footer>
-
-    <script src="main.js"></script>
+            // Update page language attribute
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+        }
+    </script>
 </body>
 </html>
