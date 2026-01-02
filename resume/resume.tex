@@ -1,0 +1,97 @@
+\documentclass{resume}
+\usepackage[UTF8]{ctex} % Use ctex for Chinese support
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\hypersetup{
+colorlinks=true,
+linkcolor=cyan,
+filecolor=magenta,
+urlcolor=blue,
+}
+
+\begin{document}
+\pagenumbering{gobble}
+
+%***"%"后面的所有内容是注释而非代码，不会输出到最后的PDF中
+%***使用本模板，只需要参照输出的PDF，在本文档的相应位置做简单替换即可
+%***修改之后，输出更新后的PDF，只需要点击Overleaf中的“Recompile”按钮即可
+
+%在大括号内填写其他信息，最多填写4个，但是如果选择不填信息，
+%那么大括号必须空着不写，而不能删除大括号。
+%\otherInfo后面的四个大括号里的所有信息都会在一行输出
+%如果想要写两行，那就用两次这个指令（\otherInfo{}{}{}{}）即可
+
+%***********个人信息**************
+{\Huge\textbf{李逢浩}}
+
+\vspace{0.5em}
+\normalsize
+邮箱：trisolaris03@gmail.com \quad | \quad 电话：+86 153-4335-6293 \quad | \quad GitHub: \href{https://github.com/s1amese2003}{github.com/s1amese2003}
+
+%***********教育背景**************
+\section{教育背景}
+
+\datedsubsection{\textbf{中南林业科技大学}，信息与计算科学，\textit{本科}}{2022.9 - 2026.6}
+
+%***********奖励荣誉**************
+\section{竞赛经历}
+
+{\footnotesize
+\datedsubsection{ICPC国际大学生程序设计竞赛亚洲区域赛铜奖}{}
+
+\datedsubsection{HNCPC湖南省大学生程序设计竞赛银奖}{}
+}
+
+%***********专业技能**************
+\section{专业技能}
+
+{\footnotesize
+\datedsubsection{熟练使用 C++，熟悉 STL 标准库、并发编程、内存管理及性能优化。}{}
+
+\datedsubsection{熟悉 Redis 底层原理。如常用数据类型的底层实现，哨兵模型的原理，持久化机制和过期删除，内存淘汰策略等。}{}
+
+\datedsubsection{熟悉 Mysql 基础知识。如索引，事务隔离级别，锁机制，日志等}{}
+
+\datedsubsection{熟悉各种网络协议。如 TCP, IP, DHCP, OSPF, VLAN, STP 协议等}{}
+
+\datedsubsection{会使用 wireshark 进行抓包。分析常见的网络故障}{}
+}
+
+%***********项目经历**************
+\section{项目经历}
+
+\datedsubsection{\textbf{C++ 微信即时通讯系统（WeChat-like IM System）}}{}
+
+\datedsubsection{\textbf{即时通讯与协议设计}}{}
+\Content
+{设计基于 TCP/WebSocket 的双向长连接协议，使用 Protobuf 定义消息结构，支持文本消息、文件分片、好友请求与朋友圈更新。}
+{实现消息路由与离线消息队列，采用消息序号 + ACK 重传机制，提升弱网场景下的可靠性与一致性。}
+{技术栈：C++、Boost.Asio、WebSocket、Protobuf、SQLite。}
+
+\datedsubsection{\textbf{文件传输与断点续传（File Transfer）}}{}
+\Content
+{设计分片上传协议，支持 offset + chunk + MD5 校验，实现大文件断点续传与并发分片写入。}
+{服务端支持文件落盘、任务恢复与流式下载，支持并发上传与完整性校验。}
+{技术栈：C++、libcurl / cpp-httplib、并发 IO、MD5 校验。}
+
+\datedsubsection{\textbf{好友系统与状态管理（Friend Service）}}{}
+\Content
+{实现好友申请/同意/删除/黑名单功能，设计好友关系状态机与授权逻辑，客户端以 SQLite 缓存关系快照。}
+{支持增量同步与本地查询，降低网络开销并提升客户端响应速度。}
+{技术栈：C++、SQLite、ACL 策略。}
+
+\datedsubsection{\textbf{朋友圈（Moments）与多媒体}}{}
+\Content
+{支持发布文本与多图片，服务端对象存储管理图片元数据，客户端支持缩略图生成与缓存策略。}
+{设计拉取/增量更新接口与带宽控制，优化移动网络下的加载与展示体验。}
+{技术栈：C++、HTTP 文件服务、OpenCV / Qt 图片处理、缓存策略。}
+
+\datedsubsection{\textbf{技术亮点与工程化}}{}
+\Content
+{端到端实现即时通信栈：协议设计、长连接、可靠传输、文件分片、媒体信令与客户端 UI。}
+{通过多线程与异步 IO（std::thread、mutex、Boost.Asio）提升并发吞吐；项目容器化（Docker），提供可复现 Demo。}
+{简历描述示例：C++/Qt + Boost.Asio 实现 WeChat-like IM，包含文本、文件、好友、朋友圈与音视频信令。}
+
+
+\end{document}

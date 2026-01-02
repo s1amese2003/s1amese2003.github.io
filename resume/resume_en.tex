@@ -1,0 +1,97 @@
+\documentclass{resume_en}
+\usepackage[UTF8]{ctex} % Use ctex for Chinese support
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\hypersetup{
+colorlinks=true,
+linkcolor=cyan,
+filecolor=magenta,
+urlcolor=blue,
+}
+
+\begin{document}
+\pagenumbering{gobble}
+
+%***"%"后面的所有内容是注释而非代码，不会输出到最后的PDF中
+%***使用本模板，只需要参照输出的PDF，在本文档的相应位置做简单替换即可
+%***修改之后，输出更新后的PDF，只需要点击Overleaf中的“Recompile”按钮即可
+
+%在大括号内填写其他信息，最多填写4个，但是如果选择不填信息，
+%那么大括号必须空着不写，而不能删除大括号。
+%\otherInfo后面的四个大括号里的所有信息都会在一行输出
+%如果想要写两行，那就用两次这个指令（\otherInfo{}{}{}{}）即可
+
+%***********Personal Information**************
+{\Huge\textbf{Fenghao Li}}
+
+\vspace{0.5em}
+\normalsize
+Email: trisolaris03@gmail.com \quad | \quad Phone: +86 153-4335-6293 \quad | \quad GitHub: \href{https://github.com/s1amese2003}{github.com/s1amese2003}
+
+%***********Education**************
+\section{Education}
+
+\datedsubsection{\textbf{Central South University of Forestry and Technology}, Information and Computing Science, \textit{Bachelor}}{2022.9 - 2026.6}
+
+%***********Awards & Honors**************
+\section{Competition Experience}
+
+{\footnotesize
+\datedsubsection{Bronze Medal, ICPC Asia Regional Contest}{}
+
+\datedsubsection{Silver Medal, HNCPC Hunan Collegiate Programming Contest}{}
+}
+
+%***********Technical Skills**************
+\section{Technical Skills}
+
+{\footnotesize
+\datedsubsection{Proficient in C++, familiar with STL standard library, concurrent programming, memory management, and performance optimization.}{}
+
+\datedsubsection{Familiar with Redis internals, including data structure implementations, Sentinel model, persistence mechanisms, expiration policies, and memory eviction strategies.}{}
+
+\datedsubsection{Familiar with MySQL fundamentals, including indexing, transaction isolation levels, locking mechanisms, and logging.}{}
+
+\datedsubsection{Familiar with various network protocols such as TCP, IP, DHCP, OSPF, VLAN, STP, etc.}{}
+
+\datedsubsection{Proficient in using Wireshark for packet capture and analyzing common network issues.}{}
+}
+
+%***********Project Experience**************
+\section{Project Experience}
+
+\datedsubsection{\textbf{C++ WeChat-like Instant Messaging System}}{}
+
+\datedsubsection{\textbf{Instant Messaging \& Protocol Design}}{}
+\Content
+{Designed bidirectional persistent connection protocol based on TCP/WebSocket, using Protobuf for message structure definition, supporting text messages, file chunking, friend requests, and moments updates.}
+{Implemented message routing and offline message queue with sequence number + ACK retransmission mechanism, improving reliability and consistency in weak network scenarios.}
+{Tech Stack: C++, Boost.Asio, WebSocket, Protobuf, SQLite.}
+
+\datedsubsection{\textbf{File Transfer \& Resumable Upload}}{}
+\Content
+{Designed chunked upload protocol with offset + chunk + MD5 validation, implementing resumable transfer for large files and concurrent chunk writing.}
+{Server-side supports file persistence, task recovery, and streaming download with concurrent upload and integrity verification.}
+{Tech Stack: C++, libcurl / cpp-httplib, Concurrent IO, MD5 Checksum.}
+
+\datedsubsection{\textbf{Friend System \& State Management}}{}
+\Content
+{Implemented friend request/accept/delete/blacklist features, designed friend relationship state machine and authorization logic, with client-side SQLite caching of relationship snapshots.}
+{Supports incremental synchronization and local queries, reducing network overhead and improving client responsiveness.}
+{Tech Stack: C++, SQLite, ACL Policy.}
+
+\datedsubsection{\textbf{Moments \& Multimedia}}{}
+\Content
+{Supports posting text and multiple images, server-side object storage for image metadata management, client-side thumbnail generation and caching strategy.}
+{Designed fetch/incremental update interface with bandwidth control, optimizing loading and display experience on mobile networks.}
+{Tech Stack: C++, HTTP File Service, OpenCV / Qt Image Processing, Caching Strategy.}
+
+\datedsubsection{\textbf{Technical Highlights \& Engineering}}{}
+\Content
+{End-to-end implementation of instant messaging stack: protocol design, persistent connections, reliable transmission, file chunking, media signaling, and client UI.}
+{Improved concurrent throughput through multi-threading and asynchronous IO (std::thread, mutex, Boost.Asio); containerized project (Docker) with reproducible demo.}
+{Summary: C++/Qt + Boost.Asio WeChat-like IM implementation featuring text, file transfer, friend system, moments, and audio/video signaling.}
+
+
+\end{document}
